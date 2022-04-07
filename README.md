@@ -107,12 +107,42 @@ Based on CACHE_HIT_THRESHOLD value present in the Spectre code explained in the 
 
 ![alt text](https://github.com/sakib1486/CMPUT664_Spectre/blob/main/Results/Option1_1.png)
 
-[alt text](Results/Option1_2.png)
+![alt text](https://github.com/sakib1486/CMPUT664_Spectre/blob/main/Results/Option1_2.png)
 
-Similar execution for the second experiment should be as follows irrespective of the CACHE_HIT_THRESHOLD in the attack code, and irrespective of the architectures as well.
+For the first image the THRESHOLD value was set to 80, and the second time it had the value of 30. Similar execution for the second experiment should be as follows irrespective of the CACHE_HIT_THRESHOLD in the attack code, and irrespective of the architectures as well.
 
-[!alt text](https://github.com/sakib1486/CMPUT664_Spectre/edit/main/Results/Option2.jpg?raw=true)
+![alt text](https://github.com/sakib1486/CMPUT664_Spectre/blob/main/Results/Option2.png)
 
+## Results
+
+The overall result collected from our experiments are as follows:
+
+![alt text](https://github.com/sakib1486/CMPUT664_Spectre/blob/main/Results/Overall.png)
+
+The **Hit** refers to the successful Spectre attack, and **No Hit** means there is no exposure of secret data from Cache memory. The time annotated in each cell with Hit/No Hit are the execution time required in our case to carry out a total run of the spectre attack code with [spectrev1.c](tests/test-progs/spectre/src/spectrev1.c) file that we used.
+
+## Execute the Spectre Attack on Your Device
+
+To run the spectre attack with our code, you just open the terminal in directory where the code is saved and run the following directly:
+
+`gcc {spectre filename}.c -o spectre -static`
+`./spectre`
+
+## Report
+
+You can find our project report in detail [here](Report/report.pdf).
+
+## Bibliography
+
+The following bibliography was consulted for the creation of the code and the whole project:
+
+https://www.gem5.org/
+
+http://www.multi2sim.org/
+
+https://github.com/Eugnis/spectre-attack
+
+https://github.com/feffi/docker-spectre
 
 
 
