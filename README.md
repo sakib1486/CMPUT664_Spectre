@@ -134,11 +134,14 @@ To run the spectre attack with our code, you just open the terminal in directory
 To compile and run a .c/.cpp file of your choice, please place the code inside a preferred directory of your choice under the top directory or you can also adopt to our preference and save your codefile under the [tests/test-progs/](tests/test-progs/) directory. Then follow the steps to compile your file with dockcross, below is the necessary commands for a X86 architecture from the top directory.
 
 `cd Path/to/your/directory`
+
 `docker run -rm dockcross/linux-x86 > ./dockcross-x86`
+
 `chmod +x ./dockcross-x86`
+
 `./dockcross-x86 bash -c '$CC {filename}.c -o {output filename} -static'`
 
-And then head back to the top directory and run the build command from (#experiments).
+And then head back to the top directory and run the build command from [Experiments].
  
 
 ## Report
