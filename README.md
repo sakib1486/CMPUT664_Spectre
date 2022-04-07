@@ -105,9 +105,9 @@ To run the similar experiment on ARM binaries, you just need to switch 'X86' to 
 
 Based on CACHE_HIT_THRESHOLD value present in the Spectre code explained in the [Project Report](Report/report.pdf), the expectd output from the first experiment should be as follows:
 
-![alt text](https://github.com/sakib1486/CMPUT664_Spectre/main/Results/Option1_1.png?raw=true)
+[alt text](Results/Option1_1.png)
 
-![alt text](https://github.com/sakib1486/CMPUT664_Spectre/main/Results/Option1_2.png?raw=true)
+[alt text](Results/Option1_2.png)
 
 Similar execution for the second experiment should be as follows irrespective of the CACHE_HIT_THRESHOLD in the attack code, and irrespective of the architectures as well.
 
