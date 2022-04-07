@@ -141,7 +141,7 @@ To compile and run a .c/.cpp file of your choice, please place the code inside a
 
 `./dockcross-x86 bash -c '$CC {filename}.c -o {output filename} -static'`
 
-And then head back to the top directory and run the build command from [Experiments].
+And then head back to the top directory and run the build command from [Experiments](Experiments).
  
 
 ## Report
