@@ -10,6 +10,7 @@ This repository contains the project works from CMPUT 664 that was carried out i
 - [Tools Used](#tools)
 - [Setting Up Gem5](#setup)
 - [Experiments](#experiments)
+- [Outputs](#outputs)
 - [Results](#results)
 - [Spectre Attack on your Device](#spectreondevice)
 - [Report](#report)
@@ -83,7 +84,7 @@ Now from the top directory, run the following command to use the built x86 archi
 
 `build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/spectresrc/spectre`
 
-### _Spectre Attack_ on modified X86 and ARM architectures
+### 2. _Spectre Attack_ on modified X86 and ARM architectures
 
 To run our shielding technique, you need to use all the files and folders from this repository. Two options that we followed to isolate the cache memory are-
 
@@ -99,6 +100,23 @@ And for the second option, run the following command:
 `build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB --caches`
 
 To run the similar experiment on ARM binaries, you just need to switch 'X86' to 'ARM' after it has been built up correctly on Gem5.
+
+## Outputs
+
+Based on CACHE_HIT_THRESHOLD value present in the Spectre code explained in the [Project Report](Report/report.pdf), the expectd output from the first experiment should be as follows:
+
+[!alt text](https://github.com/sakib1486/CMPUT664_Spectre/edit/main/Results/Option1_1.jpg?raw=true)
+
+[!alt text](https://github.com/sakib1486/CMPUT664_Spectre/edit/main/Results/Option1_2.jpg?raw=true)
+
+Similar execution for the second experiment should be as follows irrespective of the CACHE_HIT_THRESHOLD in the attack code, and irrespective of the architectures as well.
+
+[!alt text](https://github.com/sakib1486/CMPUT664_Spectre/edit/main/Results/Option2.jpg?raw=true)
+
+
+
+
+
 
 
 
