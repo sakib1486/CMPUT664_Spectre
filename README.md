@@ -52,7 +52,7 @@ This should build gem5 X86 architecture of ours on 4 threads if eveything is OK.
 
 So if every requirements are installed and satisfied, you can build with the above command for _X86_. To build an _ARM_ architecture binary just replace 'X86' with 'ARM'. You can buildthe architectures in this way. One downside to Gem5 is we sometimes cannot build two architecture binaries(say X86 and ARM) together for use. If you want to use ARM after you are done with ARM, you  may need to clean the previous build folder first by:
 
-`python3 $`which scons`$ --clean --no-cache`
+`python3 $(which scons) --clean --no-cache`
 
 And rebuild again with the architecture that you want.
 
@@ -78,6 +78,29 @@ The wayaround to this is **_dockercross_** which is a tool to cross-compile C/C+
 `./dockcross-x86 bash -c '$CC {filename}.c -o {output filename} -static'`
 
 This should be done on the folder where your .c file is saved. Our spectre code file and its corresponding compiled output with dockcross can be found [here](test/test-progs/spectre/src).
+
+Now from the top directory, run the following command to use the built x86 architecture on Gem5 to run the output file:
+
+`build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/spectresrc/spectre`
+
+### _Spectre Attack_ on modified X86 and ARM architectures
+
+To run our shielding technique, you need to use all the files and folders from this repository. Two options that we followed to isolate the cache memory are-
+
+  - Firstly, Reducing the size of the Cache Memory by setting the Cache memorysize
+  - Secondly, Disabling the Cache Memory while running the output.
+
+For the first option, from the top directory, run the following command:
+
+`build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB`
+
+And for the second option, run the following command:
+
+`build/X86/gem5.opt configs/example/se.py --cmd=tests/test-progs/hello/bin/x86/linux/hello --cpu-type=TimingSimpleCPU --l1d_size=64kB --l1i_size=16kB --caches`
+
+To run the similar experiment on ARM binaries, you just need to switch 'X86' to 'ARM' after it has been built up correctly on Gem5.
+
+
 
 
 
