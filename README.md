@@ -52,7 +52,7 @@ This should build gem5 X86 architecture of ours on 4 threads if eveything is OK.
 
 So if every requirements are installed and satisfied, you can build with the above command for _X86_. To build an _ARM_ architecture binary just replace 'X86' with 'ARM'. You can buildthe architectures in this way. One downside to Gem5 is we sometimes cannot build two architecture binaries(say X86 and ARM) together for use. If you want to use ARM after you are done with ARM, you  may need to clean the previous build folder first by:
 
-`python3 `which scons` --clean --no-cache`
+`python3 $`which scons`$ --clean --no-cache`
 
 And rebuild again with the architecture that you want.
 
